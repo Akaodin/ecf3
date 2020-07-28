@@ -28,9 +28,9 @@ const Accueil = () => {
                                         <img className="card-img-top" src={process.env.PUBLIC_URL + '/images/'+voitures.image} alt="Card image cap" />
                                             <div className="card-body">
                                                 <ul className="list-group list-group-flush">
-                                                    <li className="list-group-item">Marque : {voitures.marque}</li>
-                                                    <li className="list-group-item">Modèle : {voitures.modele}</li>
-                                                    <li className="list-group-item">Pays : {voitures.pays}</li>
+                                                    <li className="list-group-item">Film : {voitures.marque}</li>
+                                                    <li className="list-group-item">Date de sortie : {voitures.modele}</li>
+                                                    <li className="list-group-item">Heure de la prochaine séance : {voitures.pays}</li>
                                                 </ul>
                                             </div>
                                     </div>

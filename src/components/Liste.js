@@ -7,10 +7,9 @@ const Liste = (props) => {
         <table className='table table-striped'>
             <thead className="thead-dark">
                 <tr>
-                    <th>ID</th>
-                    <th>Marque</th>
-                    <th>Modèle</th>
-                    <th>Pays</th>
+                    <th>Film</th>
+                    <th>Date de sortie</th>
+                    <th>Heure</th>
                     <th>Image</th>
                     <th>Actions</th>
                 </tr>
@@ -19,7 +18,6 @@ const Liste = (props) => {
             {props.voitures ? props.voitures.map((voitures, index) =>{
                     return(
                         <tr key = {index}>
-                            <td className="align-middle">{voitures.id}</td>
                             <td className="align-middle">{voitures.marque}</td>
                             <td className="align-middle">{voitures.modele}</td>
                             <td className="align-middle">{voitures.pays}</td>
