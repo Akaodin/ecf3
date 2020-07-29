@@ -1,28 +1,29 @@
 import React, {Component, Fragment} from 'react';
 import Liste from './Liste';
+import Ajout from './Ajout'
 
 
 class Admin extends Component {
         state = { 
             datas:[
-                {id:1, marque:"Peugeot", modele:"208", pays:"France", image:'208.jpg'},
-                {id:2, marque:"Renault", modele:"Clio4", pays:"France", image:'clio4.png'},
-                {id:3, marque:"Tesla", modele:"X", pays:"USA", image:'x.jpg'},
-                {id:4, marque:"BMW", modele:"M5", pays:"Allemagne", image:'m5.jpg'}
+                {id:1, film:"Joker", date:"21 Janvier", heure:"14H30", image:'joker.jpg'},
+                {id:2, film:"Interstellar", date:"2 Fevrier", heure:"15H50", image:'interstellar.jpg'},
+                {id:3, film:"Inception", date:"32 Mars", heure:"23H10", image:'inception.jpg'},
+                {id:4, film:"Avatar", date:"26 Aout", heure:"9H45", image:'avatar.jpg'}
             ]
          }
          
     componentDidMount =()=>{
-        if(!localStorage.getItem('dataVoiture')){
-            localStorage.setItem('dataVoiture',JSON.
+        if(!localStorage.getItem('dataFilm')){
+            localStorage.setItem('dataFilm',JSON.
             stringify(this.state.datas));
         }else{
-            let voitures = JSON.parse(localStorage.getItem('dataVoiture')); 
-            this.setState({datas:voitures});
+            let film = JSON.parse(localStorage.getItem('dataFilm')); 
+            this.setState({datas:film});
             }
         }
 
-    removeVoiture = (index) => {
+    removeFilm = (index) => {
         console.log(index);
         const {datas} = this.state
         this.setState({
@@ -30,17 +31,17 @@ class Admin extends Component {
             return i!==index
         })
     }, function(){ // Fonction pour stocker les données dans la page internet
-        localStorage.setItem('dataVoiture', JSON.stringify(this.state.datas)) // Clé + Donnée
+        localStorage.setItem('dataFilm', JSON.stringify(this.state.datas)) // Clé + Donnée
     })
     }
 
-    addVoiture = (newVoiture) => {
+    addFilm = (newFilm) => {
         if(this.state.datas.length != 0){
-            newVoiture.id = (this.state.datas[this.state.datas.length-1].id+1)
+            newFilm.id = (this.state.datas[this.state.datas.length-1].id+1)
         }
-        this.setState({datas: [...this.state.datas, newVoiture]},
+        this.setState({datas: [...this.state.datas, newFilm]},
             function(){
-                localStorage.setItem('dataVoiture',JSON.stringify(this.state.datas));
+                localStorage.setItem('dataFilm',JSON.stringify(this.state.datas));
             });
     }
 
@@ -48,8 +49,8 @@ class Admin extends Component {
         return ( 
             <Fragment>
                 <h1 className="bg-secondary text-white text-center">Administration</h1>
-                
-                <Liste voitures = {this.state.datas} deleteVoiture = {this.removeVoiture}  />
+                <Ajout transmettre = {this.addFilm} />
+                <Liste film = {this.state.datas} deleteFilm = {this.removeFilm}  />
             </Fragment>
          );
     }

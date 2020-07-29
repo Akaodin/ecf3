@@ -7,10 +7,11 @@ function App() {
     <Fragment>
       <div className="container">
         <Nav />
-      </div>
+      
       <footer className="bg-danger col-md-12 text-center">
         Copyright &copy;2020
       </footer>
+      </div>
     </Fragment>
   );
 }
