@@ -9,7 +9,9 @@ class Admin extends Component {
                 {id:1, film:"Joker", date:"21 Janvier", heure:"14H30", image:'joker.jpg'},
                 {id:2, film:"Interstellar", date:"2 Fevrier", heure:"15H50", image:'interstellar.jpg'},
                 {id:3, film:"Inception", date:"32 Mars", heure:"23H10", image:'inception.jpg'},
-                {id:4, film:"Avatar", date:"26 Aout", heure:"9H45", image:'avatar.jpg'}
+                {id:4, film:"Avatar", date:"26 Aout", heure:"9H45", image:'avatar.jpg'},
+                {id:4, film:"Kung Fu Panda", date:"14 Juillet", heure:"17H", image:'kungfu.jpg'},
+                {id:4, film:"Dragons", date:"7 Mai", heure:"19H10", image:'dragons.jpg'}
             ]
          }
          
